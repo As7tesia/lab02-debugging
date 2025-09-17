@@ -7,7 +7,7 @@ Help received from: Aidan G and Kevin D
 # Identified Bugs:
 
 ## in main
-vec uv2 = 2.0 * uv - vec2(1.0); this line has vec instead of vec2
+vec uv2 = 2.0 * uv - vec2(1.0); this line has vec instead of vec2 <br>
 raycast(uv, dir, eye, ref);   uv here should be uv2
 
 ## in raycast()
