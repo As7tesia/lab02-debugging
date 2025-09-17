@@ -1,5 +1,24 @@
 # lab02-debugging
 
+# Shader Link
+https://www.shadertoy.com/view/WcXfWl
+Help received from: Aidan G and Kevin D
+
+# Identified Bugs:
+
+## in main
+vec uv2 = 2.0 * uv - vec2(1.0); this line has vec instead of vec2
+raycast(uv, dir, eye, ref);   uv here should be uv2
+
+## in raycast()
+H *= len * iResolution.x / iResolution.x; should be dividing by iResolution.y
+
+## in Intersection sdf3D()
+dir = reflect(eye, nor); should be dir = reflect(dir, nor)
+
+## in march()
+for(int i = 0; i < 64; ++i) ; this 64 limit should be larger, so that it has more samples to reach the further floor, something like 256;
+
 # Setup 
 
 Create a [Shadertoy account](https://www.shadertoy.com/). Either fork this shadertoy, or create a new shadertoy and copy the code from the [Debugging Puzzle](https://www.shadertoy.com/view/flGfRc).
